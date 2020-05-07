@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+.app {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 
+        90px
+        1fr
+        40px;
+  grid-template-areas: 
+        "header header"
+        "menu content"
+        "menu footer";
+  height: 100vh;
+  background-color: #F5F5F5;
+}
+
+aside.header {
+  grid-area: header;
+}
