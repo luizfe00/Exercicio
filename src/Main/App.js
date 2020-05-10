@@ -7,11 +7,15 @@ import { HashRouter } from 'react-router-dom'
 import Routes from './Routes'
 import Header from '../Components/Templates/Header'
 import Nav from '../Components/Templates/Nav'
-import Home from '../Components/Home/Home'
+import Footer from '../Components/Templates/Footer';
+
 
 export default props => 
       <HashRouter>
         <div className="app">
+          <Nav />
+          <Header />
           <Routes />
+          <Footer />
         </div>
       </HashRouter>

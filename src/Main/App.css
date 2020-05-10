@@ -1,6 +1,12 @@
+:root {
+  --bg-dark: #000000;
+  --shadow:
+        0 2px 23px 0 rgba(0, 0, 0, 0.1),
+        0 2px 49px 0 rgba(0, 0, 0, 0.06);
+}
+
 * {
   box-sizing: border-box;
-  
 }
 
 .app {
@@ -10,7 +16,7 @@
   grid-template-rows: 
         90px
         1fr
-        40px;
+        30px;
   grid-template-areas: 
         "header header"
         "menu content"
@@ -19,6 +25,15 @@
   background-color: #F5F5F5;
 }
 
-aside.header {
+header.header {
   grid-area: header;
+
+}
+
+aside.menu-area {
+  grid-area: menu;
+}
+
+main.content {
+  grid-area: content;
 }
