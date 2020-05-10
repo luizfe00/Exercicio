@@ -1,0 +1,16 @@
+.btn {
+    border-radius: 30px;
+    padding: 8px 60px;
+    margin: 20px 0 20px 500px;
+}
+
+.container {
+    background-color: #FFF;
+    box-shadow: var(--shadow);
+    width: 70%;
+    padding: 30px;
+}
+
+table.table>thead {
+    text-align: center;
+}
