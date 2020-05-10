@@ -6,8 +6,10 @@
 
 .container {
     background-color: #FFF;
+    overflow-y: scroll;
     box-shadow: var(--shadow);
     width: 70%;
+    height: 71vh;
     padding: 30px;
 }
 
