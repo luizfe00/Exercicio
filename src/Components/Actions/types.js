@@ -1,4 +1,6 @@
 export const GET_USERS = "GET_USERS";
-export const NEW_USER = "NEW_USER";
+export const ADD_USER = "ADD_USER";
 export const GET_BOOKS = "GET_BOOKS";
-export const NEW_BOOK = "NEW_BOOK";
+export const ADD_BOOK = "ADD_BOOK";
+export const GET_ERRORS = "GET_ERRORS";
+export const CLEAR_ERRORS = "CLEAR ERRORS";
