@@ -34,7 +34,7 @@ export class User extends Component {
 
         // Add User via addUser action
         this.props.addUser(newUser)
-        this.setState({ [e.target.name]: ''})
+        this.setState({ name: ''})
     }
 
 
@@ -55,7 +55,7 @@ export class User extends Component {
                                 <th scope="col">Usuário</th>
                             </tr>
                         </thead>
-                        {users.map(({ name }) => (
+                        {users.map(({ _id, name }) => (
                         <tbody>
                             <tr>
                                 <th scope="row" ><strong>{}</strong></th>
