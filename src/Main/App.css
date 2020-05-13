@@ -37,3 +37,19 @@ aside.menu-area {
 main.content {
   grid-area: content;
 }
+
+@media(max-width: 768px) {
+  .app {
+    grid-template-rows: 
+        70px
+        40px
+        1fr
+        20px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "menu"
+        "content"
+        "footer";
+  }
+}

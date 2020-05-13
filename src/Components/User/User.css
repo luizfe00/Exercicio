@@ -17,3 +17,22 @@
 table.table>thead {
     text-align: center;
 }
+
+@media(max-width: 768px) {
+    .container-fluid {
+        padding: 0;
+        margin-top: 0;
+    }
+    .btn {
+        width: 42vh;
+        margin-bottom: 30px;
+    }
+    .container {
+        background-color: #FFF;
+        overflow-y: auto;
+        box-shadow: var(--shadow);
+        height: 73vh;
+        width: 100%;
+        padding: 30px;
+    }
+}
