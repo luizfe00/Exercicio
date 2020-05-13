@@ -5,7 +5,6 @@ import { addBook, getBooks } from '../Actions/bookActions'
 import Main from '../Templates/Main'
 
 
-
 export class Books extends Component {
    
     componentDidMount() {
@@ -32,7 +31,7 @@ export class Books extends Component {
         const newBook = {
             title: this.state.title
         }
-
+        
         // Add Book via addBook action
         this.props.addBook(newBook)
     }

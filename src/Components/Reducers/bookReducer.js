@@ -16,7 +16,7 @@ export default function(state = initialState, action) {
         case ADD_BOOK:
             return {
                 ...state,
-                books: [action.payload, ...state.books]
+                books: [...state.books, action.payload]
             }
         case BOOKS_LOADING:
             return {

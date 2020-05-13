@@ -11,7 +11,7 @@ const User = require('../../models/User')
 // @access Public
 router.get('/', (req, res) => {
     User.find()
-        .sort({ date: -1 })
+        .sort({ date: 1 })
         .then(users => res.json(users))
 })
 
