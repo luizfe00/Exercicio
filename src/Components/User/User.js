@@ -34,7 +34,7 @@ export class User extends Component {
 
         // Add User via addUser action
         this.props.addUser(newUser)
-        this.setState({ name: ''})
+        this.setState({ name: '' })
     }
 
 
@@ -56,9 +56,9 @@ export class User extends Component {
                             </tr>
                         </thead>
                         {users.map(({ _id, name }) => (
-                        <tbody>
+                        <tbody key={_id}>
                             <tr>
-                                <th scope="row" ><strong>{}</strong></th>
+                                <th scope="row"><strong>{}</strong></th>
                                 <td><strong>{name}</strong></td>
                             </tr>
                         </tbody>

@@ -56,8 +56,8 @@ export class Books extends Component {
                                 <th scope="col">Livros</th>
                             </tr>
                         </thead>
-                        {books.map(({ title }) => (
-                        <tbody>
+                        {books.map(({ title, _id }) => (
+                        <tbody key={_id}>
                             <tr>
                                 <th scope="row" ><strong>{}</strong></th>
                                 <td><strong>{title}</strong></td>
