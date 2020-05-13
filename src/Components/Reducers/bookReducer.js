@@ -1,7 +1,8 @@
-import { GET_BOOKS, ADD_BOOK } from '../Actions/types'
+import { GET_BOOKS, ADD_BOOK, BOOKS_LOADING } from '../Actions/types'
 
 const initialState = {
-    books: []
+    books: [],
+    loading: false
 }
 
 export default function(state = initialState, action) {
@@ -9,12 +10,18 @@ export default function(state = initialState, action) {
         case GET_BOOKS:
             return {
                 ...state,
-                books: action.payload
+                books: action.payload,
+                loading: false
             }
         case ADD_BOOK:
             return {
                 ...state,
-                book: [action.payload, ...state.books]
+                books: [action.payload, ...state.books]
+            }
+        case BOOKS_LOADING:
+            return {
+                ...state,
+                loading:true
             }
         default:
             return state
