@@ -1,7 +1,10 @@
 .btn {
     border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
     padding: 8px 60px;
-    margin: 20px 0 20px 500px;
+    margin: 20px 0;
 }
 
 .container {

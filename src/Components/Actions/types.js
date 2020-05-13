@@ -4,3 +4,5 @@ export const GET_BOOKS = "GET_BOOKS";
 export const ADD_BOOK = "ADD_BOOK";
 export const GET_ERRORS = "GET_ERRORS";
 export const CLEAR_ERRORS = "CLEAR ERRORS";
+export const USERS_LOADING = "USERS_LOADING";
+export const BOOKS_LOADING = "BOOKS_LOADING";

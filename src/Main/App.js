@@ -5,6 +5,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import { HashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
+import store from './store'
 import Routes from './Routes'
 import Header from '../Components/Templates/Header'
 import Nav from '../Components/Templates/Nav'
@@ -16,7 +17,7 @@ class App extends Component {
 
   render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <HashRouter>
           <div className="app">
             <Nav />

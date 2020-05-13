@@ -1,8 +1,8 @@
-import { GET_USERS, ADD_USER } from '../Actions/types'
+import { GET_USERS, ADD_USER, USERS_LOADING } from '../Actions/types'
 
 const initialState = {
     users: [],
-    user: {}
+    loading: false
 }
 
 export default function(state = initialState, action) {
@@ -10,12 +10,18 @@ export default function(state = initialState, action) {
         case GET_USERS:
             return {
                 ...state,
-                users: action.payload
+                users: action.payload,
+                loading: false
             }
         case ADD_USER:
             return {
                 ...state,
-                user: action.payload
+                users: [action.payload, ...state.users],
+            }
+        case USERS_LOADING:
+            return {
+                ...state,
+                loading: true
             }
         default:
             return state
