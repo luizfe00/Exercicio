@@ -5,14 +5,22 @@
     margin-bottom: 90px;
 }
 
+
+td .btn {
+    border-radius: 50%;
+    padding: 0px 7px;
+    margin: 0 0 0 auto;
+}
+
 .container {
     background-color: #FFF;
-    overflow-y: scroll;
+    overflow-y: auto;
     box-shadow: var(--shadow);
     width: 70%;
     height: 71vh;
     padding: 30px;
 }
+
 
 table.table>thead {
     text-align: center;

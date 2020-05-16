@@ -6,3 +6,5 @@ export const GET_ERRORS = "GET_ERRORS";
 export const CLEAR_ERRORS = "CLEAR ERRORS";
 export const USERS_LOADING = "USERS_LOADING";
 export const BOOKS_LOADING = "BOOKS_LOADING";
+export const DEL_USER = "DEL_USER";
+export const DEL_BOOK = "DEL_BOOK";

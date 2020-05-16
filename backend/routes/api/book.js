@@ -8,7 +8,7 @@ const Book = require('../../models/Book')
 
 
 // @route  GET api/books
-// @desc   GET All Items
+// @desc   GET All books
 // @access Public
 router.get('/', (req, res) => {
     Book.find()
@@ -26,6 +26,15 @@ router.post('/', (req, res) => {
     })
 
     newBook.save().then(book => res.json(book))
+})
+
+// @route  DELETE api/books
+// @desc   DELETE Book
+// @access Public
+router.delete('/:id', (req, res) => {
+    Book.findById(req.params.id)
+        .then(book => book.remove().then(() => res.json({ success: true })))
+        .catch(err => res.status(404).json({ success: false }))
 })
 
 module.exports = router

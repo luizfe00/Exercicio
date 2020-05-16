@@ -1,4 +1,4 @@
-import { GET_BOOKS, ADD_BOOK, BOOKS_LOADING } from '../Actions/types'
+import { GET_BOOKS, ADD_BOOK, BOOKS_LOADING, DEL_BOOK } from '../Actions/types'
 
 const initialState = {
     books: [],
@@ -17,6 +17,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 books: [...state.books, action.payload]
+            }
+        case DEL_BOOK:
+            return {
+                ...state,
+                books: state.books.filter(book => book._id !== action.payload)
             }
         case BOOKS_LOADING:
             return {
