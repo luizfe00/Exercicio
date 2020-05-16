@@ -11,10 +11,6 @@ export class Books extends Component {
         this.props.getBooks();
     }
 
-    state = {
-        title: ''
-    }
-
     static propTyper ={
         addBook: PropTypes.func.isRequired,
         getBooks: PropTypes.func.isRequired,
