@@ -37,7 +37,7 @@ export class User extends Component {
 
     }
 
-    onDelete = (id) => {
+    onDeleteUser = (id) => {
         this.props.delUser(id)
     }
 
@@ -75,7 +75,7 @@ export class User extends Component {
                                     <button 
                                     type="button" 
                                     class="btn btn-danger"
-                                    onClick={this.onDelete.bind(this, _id)}>x</button>
+                                    onClick={this.onDeleteUser.bind(this, _id)}>x</button>
                                 </td>
                             </tr>
                         </tbody>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { addBook, getBooks } from '../Actions/bookActions'
+import { addBook, getBooks, delBook } from '../Actions/bookActions'
 import Main from '../Templates/Main'
 
 
@@ -36,6 +36,9 @@ export class Books extends Component {
         this.props.addBook(newBook)
     }
 
+    onDeleteBook = id => {
+        this.props.delBook(id)
+    }
 
     render() {
         
@@ -51,15 +54,19 @@ export class Books extends Component {
                     <table className="table table-bordered">
                         <thead>
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">Livros</th>
                             </tr>
                         </thead>
                         {books.map(({ title, _id }) => (
                         <tbody key={_id}>
                             <tr>
-                                <th scope="row" ><strong>{}</strong></th>
-                                <td><strong>{title}</strong></td>
+                                <td scope="row">
+                                    <strong>{title}</strong>
+                                    <button
+                                    type="button"
+                                    class="btn btn-danger"
+                                    onClick={this.onDeleteBook.bind(this, _id)}>x</button>
+                                </td>
                             </tr>
                         </tbody>
                         ))}
@@ -74,4 +81,4 @@ const mapStateToProps = state => ({
     book: state.books
 })
         
-export default connect(mapStateToProps, { addBook, getBooks })(Books)
+export default connect(mapStateToProps, { addBook, getBooks, delBook })(Books)
