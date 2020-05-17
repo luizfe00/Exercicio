@@ -36,8 +36,13 @@ table.table>tbody>tr>td {
         margin-top: 0;
     }
     .btn {
-        width: 42vh;
+        width: 100%;
+        padding: 3px;
         margin-bottom: 30px;
+    }
+    table.table>tbody>tr>td>.btn {
+        width: 10%;
+        padding: 0px 6px;
     }
     .container {
         background-color: #FFF;
