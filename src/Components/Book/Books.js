@@ -6,19 +6,24 @@ import Main from '../Templates/Main'
 
 
 export class Books extends Component {
+
+    state = {
+        title: ""
+    }
    
     componentDidMount() {
         this.props.getBooks();
     }
 
     static propTyper ={
+        delBook: PropTypes.func.isRequired,
         addBook: PropTypes.func.isRequired,
         getBooks: PropTypes.func.isRequired,
         book: PropTypes.object.isRequired
     }
 
     onChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({ title: e.target.value })
     }
 
     onSubmit = (e) => {
@@ -27,6 +32,8 @@ export class Books extends Component {
         const newBook = {
             title: this.state.title
         }
+
+        this.setState({ title: "" })
         
         // Add Book via addBook action
         this.props.addBook(newBook)
@@ -44,8 +51,17 @@ export class Books extends Component {
             <Main>
                 <div className="container">
                     <form onSubmit={this.onSubmit}>
-                        <input type="name" id="book" name="title" className="form-control" placeholder="Nome do Livro" onChange={this.onChange} />
-                        <button type="submit" class="btn btn-success">Criar</button> 
+                        <input 
+                        type="name" 
+                        id="book" 
+                        name="title" 
+                        className="form-control" 
+                        placeholder="Nome do Livro" 
+                        value={this.state.title}
+                        onChange={this.onChange} />
+                        <button 
+                        type="submit" 
+                        class="btn btn-success">Criar</button> 
                     </form> 
                     <table className="table table-bordered">
                         <thead>

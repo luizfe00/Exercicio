@@ -26,6 +26,10 @@ table.table>thead {
     text-align: center;
 }
 
+table.table>tbody>tr>td {
+    display: flex;
+}
+
 @media(max-width: 768px) {
     .container-fluid {
         padding: 0;

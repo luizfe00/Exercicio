@@ -7,6 +7,10 @@ import Main from '../Templates/Main'
 
 export class User extends Component {
 
+    state = {
+        name: ""
+    }
+
     
     componentDidMount() {
         this.props.getUsers();
@@ -23,7 +27,7 @@ export class User extends Component {
         this.setState({ name: e.target.value })
     }
 
-    onSubmit = (e, data) => {
+    onSubmit = (e) => {
         e.preventDefault()
 
         const newUser = {
@@ -55,6 +59,7 @@ export class User extends Component {
                         name="name" 
                         className="form-control" 
                         placeholder="Nome do Usuário" 
+                        value={this.state.name}
                         onChange={this.onChange} />
                         <button 
                         type="submit" 
