@@ -5,7 +5,6 @@ module.exports = {
     password: 'root',
     database: 'usersandbooks',
     define: {
-        timestamps: true,
-        underscore: true
+        timestamps: true
     }
 };

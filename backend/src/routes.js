@@ -3,6 +3,6 @@ const UserController = require('./controllers/UserController')
 
 const routes = express.Router();
 
-routes.post('/api/users', UserController.store);
+routes.post('/users', UserController.store);
 
 module.exports = routes;
