@@ -10,6 +10,10 @@ class User extends Model {
             tableName: 'users'
         })
     }
+
+    static associate(models) {
+        this.belongsToMany(models.Book, { foreignKey: 'userId', through: 'users_books', as: 'books' })
+    }
 }
 
 module.exports = User;
