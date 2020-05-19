@@ -19,8 +19,9 @@ module.exports = {
             where: { title }
         })
 
-        await user.addUser(book);
+        await user.addBook(book);
 
-        
+        return res.json(book)
+
     }
 };

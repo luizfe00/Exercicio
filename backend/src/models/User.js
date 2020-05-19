@@ -12,7 +12,7 @@ class User extends Model {
     }
 
     static associate(models) {
-        this.belongsToMany(models.Book, { foreignKey: 'userId', through: 'users_books', as: 'books' })
+        this.belongsToMany(models.Book, { foreignKey: 'userId', through: 'users_books', as: 'books' });
     }
 }
 
