@@ -16,4 +16,7 @@ routes.post('/users/:userId/books', BookController.store)
 // Buscar Livros - Associado ao Usuário
 routes.get('/users/:userId/books', BookController.index)
 
+// Excluir Livros - Associado ao Usuário
+routes.delete('/users/:userId/books', BookController.delete)
+
 module.exports = routes;
