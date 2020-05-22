@@ -10,6 +10,9 @@ routes.post('/users', UserController.store);
 // Receber Usuários
 routes.get('/users', UserController.index)
 
+// Atualizar Usuário
+routes.put('/users/:userId', UserController.update)
+
 // Criar Livro - Associado à Usuário
 routes.post('/users/:userId/books', BookController.store)
 
