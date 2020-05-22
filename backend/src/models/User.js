@@ -1,10 +1,16 @@
 const { Model, DataTypes } = require('sequelize')
+const validator = require('validator')
 
 class User extends Model {
     static init(sequelize) {
         super.init({
             name: DataTypes.STRING,
-            email: DataTypes.STRING,
+            email: {
+                type: DataTypes.STRING,
+                validate: {
+                    isEmail: true,
+                }
+            },
         }, {
             sequelize,
             tableName: 'users'
