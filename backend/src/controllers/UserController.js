@@ -39,10 +39,10 @@ module.exports = {
 
         // Update fields
         if(name) {
-            user.name = name
+            user.update({ name })
         };
         if(email) {
-            user.email = email
+            user.update({ email })
         };
 
         return res.json(user);
