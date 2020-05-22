@@ -1,4 +1,5 @@
-const User = require('../models/User')
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
 
@@ -17,13 +18,35 @@ module.exports = {
         };
 
         // Check for existing user
-        const existing = await User.findOne({ where: { email } })
+        await User.findOne({ where: { email } })
+            .then(user => {
+                if(user) return res.status(400).json({ msg: 'Usuário já existe' }) 
+
+                
+            });
         
-        if(existing) return res.status(400).json({ msg: 'Usuário já existe' })
-
+        
         // Create user
+        const user = await User.create({ name, email })
+            .then(user => {
+                // Create Token
+                jwt.sign({ id: user.id },
+                    'jwtSecret',
+                    { expiresIn: 3600 },
+                    (err, token) => {
+                        if(err) throw err
+                        res.json({
+                            token,
+                            user: {
+                                id: user.id,
+                                name: user.name,
+                                email: user.email
+                            }
+                        });
+                    }
+                    );
+            });
 
-        const user = await User.create({ name, email });
 
         return res.json(user)
     },
